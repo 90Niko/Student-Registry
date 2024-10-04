@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x] 
+        node-version: [20.x] 
     steps:
     - name: Checkout the code
       uses: actions/checkout@v4
@@ -27,5 +27,19 @@ jobs:
       run: npm install
     - name: Execute integration tests
       run: npm run test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build_test
+    steps:
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.MY_RENDER_API_KEY }}
+
+      
+# srv-crvr1g3tq21c738p6m20
+# rnd_lEcf85OZXB9fRsSUfIV1O9Sw21BG
    
    
