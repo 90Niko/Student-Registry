@@ -1,13 +1,25 @@
-include header.pug
+ include header.pug
 
-h1 Register New Student
-form(method='POST' action='/add-student')
-  div
+//- h1 Register New Student
+//- form(method='POST' action='/add-student')
+//-   div
+//-     label(for='name') Name: 
+//-     input#name(type='text', name='name')
+//-   div
+//-     label(for='email') Email: 
+//-     input#email(type='email',  name='email')
+//-   button(type='submit') Add
+
+
+
+h1(style="color: blue; text-align: center") Register New Student
+form(method='POST' action='/add-student' style="width: 300px; margin: 0 auto")
+  div(style="margin-bottom: 10px")
     label(for='name') Name: 
-    input#name(type='text', name='name')
-  div
+    input#name(type='text', name='name', style="width: 100%")
+  div(style="margin-bottom: 10px")
     label(for='email') Email: 
-    input#email(type='email',  name='email')
-  button(type='submit') Add
+    input#email(type='email',  name='email', style="width: 100%")
+  button(type='submit', style="background-color: green; color: white; padding: 5px 10px") Add
 
 include footer
