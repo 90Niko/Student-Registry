@@ -1,5 +1,44 @@
 include header.pug
 
+style.
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    width: 300px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  li span {
+    font-weight: bold;
+    color: #000;
+  }
+
+include header.pug
+
 h1 Registered Students
 ul
   each s in students
